@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="naviPage.css">
+
+    <style>
+        .slideshow{
+            position: absolute;
+            top:15em;
+            left: 5vw;
+            width: 60em;
+            height: 30em;
+            border-width: 0.1em;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0);
+            border-radius: 0.5em;
+            overflow: hidden;
+        }
+
+        #imageList{
+            width: 420em;
+            height: 30em;
+        }
+
+        #imageList img{
+            width: 60em;
+            height: 32em;
+        }
+
+        #imageList li{
+            float: left;
+        }
+
+        .button{ 
+            position: absolute;
+            width: 60em;
+            height: 10em;
+            left: 5vw;
+            top: 45em;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-width: 0.1em;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0);
+            border-radius: 0.5em;
+        }
+
+        .image-title {
+            position: absolute;
+            left: 1em;
+            top: 1em;
+            font-size: 2em;
+            width: 20em;
+            height: 2em;
+            text-align: center;
+            background-color: transparent;
+        }
+
+        .image-index {
+            position: absolute;
+            bottom: 0.5em;
+            left: 2em;
+            width: 40em;
+            height: 4em;
+            background-color: transparent;
+            display: flex;            
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .image-index div{
+            text-align: center;
+            line-height: 0.5rem;
+            font-size: 1rem;
+            color:rgba(255, 255, 255, 0);
+            bottom: 1rem;
+            width: 2rem;
+            height: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 0.1rem solid white;
+            border-radius: 0.5rem;
+            transition: .1s;
+        }
+
+        .image-index div:hover{
+            color: black;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 1);
+            text-align: center;
+            line-height: 2rem;
+        }
+
+        .image-index div:active{
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .button ul{
+            position: absolute;
+            top:50%;
+            left: 85%;
+            transform: translate(-50%,-50%);
+            display: flex;
+        }
+
+        .button li{
+            list-style: none;
+            width: 6em;
+            height: 6em;
+            background:#262626;
+            margin: 0 1em;
+            border-radius: 50%;
+            transition: .5s;
+        }
+
+        .button li:hover{
+            background: rgb(1, 78, 178);
+        }
+
+        .button li:active{
+            background: rgb(108, 190, 248);
+        }
+
+        .button li span {
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            border: 0.2em solid #fff;
+            transition: .5s;
+        }
+
+        #next span{
+            top:50%;
+            right: 20%;
+            transform: translateY(-50%) rotate(-45deg);
+            border-left: none;
+            border-top: none;
+        }
+
+        #next span:hover{
+            right: 16%;
+        }
+
+        #next span::before{
+            content: '';
+            position: absolute;
+            width: 4em;
+            height: 0.3em;
+            background: #fff;
+            transform-origin: right;
+            transform: rotate(45deg) translate(0em,2.8em) scaleX(0);
+            transition: .5s;
+        }
+
+        #next:hover span::before{
+            transform: rotate(45deg) translate(0em,2.8em) scaleX(0.8);
+        }
+
+        #prev span{
+            top:50%;
+            left: 20%;
+            transform: translateY(-50%) rotate(-45deg);
+            border-right: none;
+            border-bottom: none;
+        }
+
+        #prev span:hover{
+            left: 16%;
+        }
+
+        #prev span::before{
+            content: '';
+            position: absolute;
+            width: 4em;
+            height: 0.3em;
+            background: #fff;
+            transform-origin: left;
+            transform: rotate(45deg) translate(-0.1em,-0.1em) scaleX(0);
+            transition: .5s;
+        }
+
+        #prev:hover span::before{
+            transform: rotate(45deg) translate(-0.1em,-0.1em) scaleX(0.8);
+        }
+
+        .small-images{
+            position: absolute;
+            left: 75em;
+            top:10em;
+            width: 60em;
+            height: 55em;
+            padding: 2em;
+            border: 0.1em solid rgba(255, 255, 255, 0);
+            border-radius: 1em;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color:rgba(255, 255, 255, 0.5);
+            overflow-y: scroll;
+        }
+        
+        /*修改滚动条*/
+        .small-images::-webkit-scrollbar {
+        width: 1em;											
+        height: 1em;											
+        border-radius: 1em;									
+        background-color: rgba(255, 255, 255, 0.5);		
+        }
+
+        /*定义滚动条轨道 内阴影+圆角*/
+        .small-images::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 0em rgba(255, 255, 255, 0);		
+        border-radius: 1em;									
+        background-color: transparent;					
+        }
+
+        /*定义滑块 内阴影+圆角*/
+        .small-images::-webkit-scrollbar-thumb {
+        border-radius: 1em;									
+        box-shadow: inset 0 0 0px rgba(240, 240, 240, .5);		
+        background-color: rgba(2, 33, 54, .5);			
+        }
+        
+        .small-images div{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2em;
+            width: 25em;
+            height: 10em;
+            border: 0.1em solid rgba(255, 255, 255, 0);
+        }
+        .small-images div img{
+            position: relative;
+            display: inline-block;
+            width: 90%;
+            height: 130%;
+        }
+        .small-images div img:hover{
+            transition: 0.5s;
+            transform: translateY(-5%);
+        }
+        .small-images div h2{
+            position: absolute;
+            display: none;
+            top:50%;
+            font-size: 2em;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .small-images div h2:hover{
+            display: block;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>武大著名风景</h1>
+    </div>
+
+    <div class="slideshow">
+        <ul id="imageList">
+            <li><img src="mainImage/Page1.jpg" alt="" /></li>
+            <li><img src="mainImage/Page1.1.jpg" alt="" /></li>
+            <li><img src="mainImage/Page2.jpg" alt="" /></li>
+            <li><img src="mainImage/Page2.1.jpg" alt="" /></li>
+            <li><img src="mainImage/Page3.jpg" alt="" /></li>
+            <li><img src="mainImage/Page3.1.jpg" alt="" /></li>
+            <li><img src="mainImage/Page1.jpg" alt="" /></li>
+        </ul>
+    </div>
+
+    <div class="button">
+        <span class="image-title">国立武汉大学</span>
+        <ul>
+            <li id="prev"><span></span></li>
+            <li id="next"><span></span></li>
+        </ul>
+        <div class="image-index">
+            <div onclick="turnPage()">1</div>
+            <div onclick="turnPage()">2</div>
+            <div onclick="turnPage()">3</div>
+            <div onclick="turnPage()">4</div>
+            <div onclick="turnPage()">5</div>
+            <div onclick="turnPage()">6</div>
+        </div>
+    </div>
+
+    <div class="small-images">
+        <div>
+            <img src="mainImage/sPage11武大125周年校庆.jpg">
+            <h2>武大125周年校庆</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage12912操场_副本.jpg">
+            <h2>912操场合成图像</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage10凌波门之外.jpg">
+            <h2>凌波门之外</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage3东湖.jpg">
+            <h2>东湖</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage2鉴湖.jpg">
+            <h2>鉴湖</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage6宋卿体育馆.jpg">
+            <h2>宋卿体育馆</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage4蝶楼.jpg">
+            <h2>蝶楼</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage7医学部白宫.jpg">
+            <h2>医学部白宫</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage8樱花大道.jpg">
+            <h2>樱花大道</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage9樱顶老楼.jpg">
+            <h2>樱顶老楼</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage1老图书馆仰视图.jpg">
+            <h2>老图书馆仰视图</h2>
+        </div>
+        <div>
+            <img src="mainImage/sPage5珞珈文库.jpg">
+            <h2>珞珈文库</h2>
+        </div>
+    </div>
+
+    <script>
+        var eprev=document.getElementById("prev");
+        var enext=document.getElementById("next");
+        var imageIndex=document.getElementsByClassName("image-index")[0].children;
+        var eImageList=document.getElementById("imageList");
+        var imageTitle=document.getElementsByClassName("image-title")[0];
+        var titleName=['国立武汉大学','武汉大学行政楼','樱花城堡','武汉大学樱花','武汉大学老图书馆','万林博物馆'];
+        var smallImages=document.getElementsByClassName("small-images")[0].getElementsByTagName("img");
+        var smallImagesH2=document.getElementsByClassName("small-images")[0].getElementsByTagName("h2");
+        var left=0;
+        var timer;
+        var stopTime;
+        run();
+        function run(){
+            if(left<=-360){
+                left=0;
+            }
+            var m=Math.floor(-left/60);
+            imageList.style.marginLeft=left + 'em';
+            stopTime=(left%60==0)?1500:10;
+            if(stopTime==1500)imageTitle.innerHTML=titleName[m];
+            left-=1;
+            timer=setTimeout(run,stopTime);
+            iconChange(m);
+        }
+
+        function iconChange(m){
+            for(let index=0;index<imageIndex.length;index++){
+                imageIndex[index].style.backgroundColor='';
+                imageIndex[index].style.width="2rem";
+            }
+            if(m<imageIndex.length){
+                imageIndex[m].style.backgroundColor='rgba(255,255,255,1)';
+                imageIndex[m].style.width="4rem";
+            }
+        }
+
+        //页面定位函数
+        function imgChange(pageIndex){
+            let it=-(pageIndex*60);
+            imageList.style.marginLeft=it+'em';
+            left=it;
+            imageTitle.innerHTML=titleName[pageIndex];
+        }
+
+        eprev.onclick=function(){
+            let preNum=Math.floor(-left/60)-1;
+            if(preNum<=-1){
+                preNum=5;
+            }
+            imgChange(preNum);
+        }
+        enext.onclick=function(){
+            let nextNum=Math.floor(-left/60)+1;
+            if(nextNum>=6){
+                nextNum=0;
+            }
+            imgChange(nextNum);
+        }
+        function turnPage(){
+            let tg=event.target;
+            let ico=tg.innerHTML-1;
+            imgChange(ico);
+            iconChange(ico);
+        }
+        eImageList.onmousemove=function(){
+            clearTimeout(timer);
+        }
+        eImageList.onmouseout=function(){
+            run();
+        }
+        for (let i=0;i<smallImages.length;i++){
+            smallImages[i].onmousemove=function(){
+                smallImagesH2[i].style.display="block";
+            }
+            smallImages[i].onmouseout=function(){
+                smallImagesH2[i].style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>
