@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-image: url(mainImage/backgroud.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 120%;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* @media screen and (max-width:1600px) {
+    html{
+        font-size: 62,5%;
+    }
+}
+
+@media screen and (max-width:1400px) {
+    html{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    html{
+        font-size: 12px;
+    }
+} */
+
+.container {
+  position: inherit;
+  display: block;
+}
+
+.title {
+  position: relative;
+  width: 100vw;
+  height: 10vh;
+  top: 0.5em;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* 轮播图的样式表 */
+.slideshow {
+  position: absolute;
+  top: 17em;
+  left: 5vw;
+  width: 60em;
+  height: 30em;
+  border-width: 0.1em;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 1.5em 1.5em 0 0;
+  overflow: hidden;
+}
+
+#imageList {
+  width: 420em;
+  height: 30em;
+}
+
+#imageList img {
+  width: 60em;
+  height: 32em;
+}
+
+#imageList img:hover {
+  cursor: pointer;
+}
+
+#imageList li {
+  float: left;
+}
+
+.button {
+  position: absolute;
+  width: 60em;
+  height: 10em;
+  left: 5vw;
+  top: 47em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-width: 0.1em;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 0.5em 0.5em 1.5em 1.5em;
+}
+
+.image-title {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  font-size: 2.2em;
+  color: rgb(233, 223, 223);
+  width: 20em;
+  height: 2em;
+  text-align: center;
+  background-color: transparent;
+}
+
+.image-index {
+  position: absolute;
+  bottom: 0.5em;
+  left: 2em;
+  width: 40em;
+  height: 4em;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image-index div {
+  text-align: center;
+  line-height: 0.5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0);
+  bottom: 1rem;
+  width: 2rem;
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0.1rem solid white;
+  border-radius: 0.5rem;
+  transition: 0.1s;
+}
+
+.image-index div:hover {
+  color: black;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 2rem;
+}
+
+.image-index div:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.button ul {
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.button li {
+  list-style: none;
+  width: 6em;
+  height: 6em;
+  background: #262626;
+  margin: 0 1em;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.button li:hover {
+  background: rgb(1, 78, 178);
+}
+
+.button li:active {
+  background: rgb(108, 190, 248);
+}
+
+.button li span {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  border: 0.2em solid #fff;
+  transition: 0.5s;
+}
+
+#next span {
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%) rotate(-45deg);
+  border-left: none;
+  border-top: none;
+}
+
+#next span:hover {
+  right: 16%;
+}
+
+#next span::before {
+  content: "";
+  position: absolute;
+  width: 4em;
+  height: 0.3em;
+  background: #fff;
+  transform-origin: right;
+  transform: rotate(45deg) translate(0em, 2.8em) scaleX(0);
+  transition: 0.5s;
+}
+
+#next:hover span::before {
+  transform: rotate(45deg) translate(0em, 2.8em) scaleX(0.8);
+}
+
+#prev span {
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%) rotate(-45deg);
+  border-right: none;
+  border-bottom: none;
+}
+
+#prev span:hover {
+  left: 16%;
+}
+
+#prev span::before {
+  content: "";
+  position: absolute;
+  width: 4em;
+  height: 0.3em;
+  background: #fff;
+  transform-origin: left;
+  transform: rotate(45deg) translate(-0.1em, -0.1em) scaleX(0);
+  transition: 0.5s;
+}
+
+#prev:hover span::before {
+  transform: rotate(45deg) translate(-0.1em, -0.1em) scaleX(0.8);
+}
+
+.small-images {
+  position: absolute;
+  left: 75em;
+  top: 10em;
+  width: 60em;
+  height: 55em;
+  padding: 2em;
+  border: 0.1em solid rgba(255, 255, 255, 0);
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow-y: scroll;
+}
+
+/*修改滚动条*/
+.small-images::-webkit-scrollbar {
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.small-images::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0em rgba(255, 255, 255, 0);
+  border-radius: 1em;
+  background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+.small-images::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+  box-shadow: inset 0 0 0px rgba(240, 240, 240, 0.5);
+  background-color: rgba(2, 33, 54, 0.5);
+}
+
+.small-images div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  width: 25em;
+  height: 10em;
+  border: 0.1em solid rgba(255, 255, 255, 0);
+}
+.small-images div img {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+  height: 130%;
+  transition: 0.5s;
+  border: 0.1em solid transparent;
+  border-radius: 1em;
+}
+.small-images div img:hover {
+  transform: translateY(-5%);
+}
+.small-images div h2 {
+  position: absolute;
+  display: none;
+  top: 50%;
+  font-size: 2em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.small-images div img:hover h2 {
+  display: block;
+  transition: 0.5s;
+}
+
+/* @media only screen and (max-width:1000px) {
+    .slideshow{
+        left: 20vw;
+    }
+    .button{
+        left: 20vw;
+    }
+    .small-images{
+        position: absolute;
+        left: 18vw;
+        top: 75em;
+    }
+} */
+
+.iframe,
+#portal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+#portal {
+  object-fit: cover;
+}

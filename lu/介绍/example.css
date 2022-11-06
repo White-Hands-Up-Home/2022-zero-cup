@@ -1,0 +1,230 @@
+@font-face {
+  font-family: "font";
+  src: url("../../font/font-style.ttf") format("woff2");
+}
+
+* {
+  font-family: font !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../../Index/mainImage/backgroud.jpg);
+  background-color: blue;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-size: cover;
+  height: 160vh;
+}
+
+.content {
+  background-size: cover;
+  background-position: 50% 50%;
+  perspective: 20vw;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/*标题*/
+.title {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  top: 30vh;
+  color: transparent;
+  font-size: 10rem;
+  font-weight: 500;
+  -webkit-text-stroke: 0.25rem grey;
+}
+
+.title::before {
+  content: attr(data-text);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  color: rgb(235, 133, 184);
+  width: 10%;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.title:hover::before {
+  width: 100%;
+}
+
+.center {
+  margin: auto;
+  width: 80%;
+  padding: 10rem;
+}
+
+/* 文章盒 */
+.box {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 4rem;
+  margin-top: 6rem;
+  border-radius: 8rem;
+  font-size: 1.5rem;
+  transition: transform 0.4s ease, opacity 0.4s linear;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+.box:nth-child(even) {
+  transform: translateX(-400%);
+  opacity: 0;
+}
+
+.box:nth-child(odd) {
+  transform: translateX(400%);
+  opacity: 0;
+}
+
+.box.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#ltitle {
+  text-align: center;
+  font-size: 5rem;
+  color: transparent;
+  -webkit-text-stroke: 3px rgb(1, 1, 1);
+}
+
+#other {
+  text-align: right;
+}
+
+.bt {
+  cursor: pointer;
+  width: 10%;
+  height: 3rem;
+  display: block;
+  text-align: center;
+  background-image: linear-gradient(
+    rgba(29, 156, 211, 0.95),
+    rgba(140, 18, 192, 0.95)
+  );
+  color: rgb(234, 226, 247);
+  border: none;
+  margin: auto;
+  font-size: 1.25rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: color 0.5s linear;
+}
+
+.bt_text {
+  position: relative;
+  z-index: 2;
+}
+
+.bt:hover {
+  color: lightpink;
+}
+
+.box2 {
+  cursor: pointer;
+  margin: 2rem auto;
+  border: none;
+  overflow: hidden;
+  border-radius: 4rem;
+}
+
+.box2 ul {
+  display: flex;
+}
+
+.box2 li {
+  width: 4rem;
+  list-style: none;
+  box-shadow: 0 0 4rem rgb(0, 0, 0);
+  transition: all 0.5s;
+}
+
+.box2 li img {
+  display: block;
+  width: 80rem;
+  height: 40rem;
+}
+
+.box2 ul:hover li {
+  width: 5rem;
+}
+
+.box2 ul li:hover {
+  width: 50rem;
+}
+
+.box3 {
+  display: flex;
+}
+
+.lbox {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 4rem;
+  width: 15%;
+  height: 20vh;
+  text-align: center;
+}
+
+.lbt {
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  font-size: 5vh;
+  border-radius: 10rem;
+  transition: color 0.5s linear;
+  border: none;
+  color: black;
+}
+
+.lbt_text {
+  position: relative;
+  z-index: 2;
+}
+
+.lbt:hover {
+  color: lightpink;
+}
+.bq {
+  text-align: center;
+  font-size: larger;
+  background-color: transparent;
+  margin-top: 10vh;
+  color: yellow;
+}
+
+#canvas {
+  filter: blur(1px);
+  z-index: -99;
+  position: fixed;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.box3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}

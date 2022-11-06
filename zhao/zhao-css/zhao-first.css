@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "font";
+  src: url("../../font/font-style.ttf") format("woff2");
+}
+
+* {
+  font-family: font !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+  background-image: none;
+  font-size: large;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: absolute;
+  z-index: 2;
+  top: -12vh;
+  left: -12vh;
+}
+
+.circle {
+  background-color: #2ea7a9;
+  height: 25vh;
+  width: 25vh;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 12vh;
+  background: transparent;
+  border: 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 53%;
+}
+
+.circle button#close {
+  top: 53%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 100%;
+  margin: 5vh auto;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
+
+nav {
+  position: fixed;
+  bottom: 4vh;
+  left: 0;
+  z-index: 1;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 3vh;
+}
+
+/*使文字倾斜排布*/
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 4vh 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+}
+
+nav ul li i {
+  font-size: 2rem;
+  margin-right: 1.5vh;
+}
+
+nav ul li + li {
+  margin-left: 2vh;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 3.5vh;
+  transform: translateX(-200%);
+}
+
+nav ul li + li + li + li {
+  margin-left: 5vh;
+  transform: translateX(-250%);
+}
+
+nav ul li + li + li + li + li {
+  margin-left: 6.5vh;
+  transform: translateX(-300%);
+}
+
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #2ea7a9;
+  font-weight: bold;
+}

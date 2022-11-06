@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>武大传送门</title>
+    <link rel="stylesheet" href="naviPage.css" />
+    <link rel="stylesheet" href="../font/font.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>武大著名风景</h1>
+      </div>
+
+      <div class="slideshow">
+        <ul id="imageList">
+          <li><img title="点击图片传送" src="mainImage/Page1.jpg" alt="" /></li>
+          <li>
+            <img title="点击图片传送" src="mainImage/Page1.1.jpg" alt="" />
+          </li>
+          <li><img title="点击图片传送" src="mainImage/Page2.jpg" alt="" /></li>
+          <li>
+            <img title="点击图片传送" src="mainImage/Page2.1.jpg" alt="" />
+          </li>
+          <li><img title="点击图片传送" src="mainImage/Page3.jpg" alt="" /></li>
+          <li>
+            <img title="点击图片传送" src="mainImage/Page3.1.jpg" alt="" />
+          </li>
+          <li><img title="点击图片传送" src="mainImage/Page1.jpg" alt="" /></li>
+        </ul>
+      </div>
+
+      <div class="button">
+        <span class="image-title">国立武汉大学</span>
+        <ul>
+          <li id="prev"><span></span></li>
+          <li id="next"><span></span></li>
+        </ul>
+        <div class="image-index">
+          <div onclick="turnPage()">1</div>
+          <div onclick="turnPage()">2</div>
+          <div onclick="turnPage()">3</div>
+          <div onclick="turnPage()">4</div>
+          <div onclick="turnPage()">5</div>
+          <div onclick="turnPage()">6</div>
+        </div>
+      </div>
+
+      <div class="small-images">
+        <div>
+          <img src="mainImage/sPage11武大125周年校庆.jpg" />
+          <h2>武大125周年校庆</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage12912操场_副本.jpg" />
+          <h2>912操场合成图像</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage10凌波门之外.jpg" />
+          <h2>凌波门之外</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage3东湖.jpg" />
+          <h2>东湖</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage2鉴湖.jpg" />
+          <h2>鉴湖</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage6宋卿体育馆.jpg" />
+          <h2>宋卿体育馆</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage4蝶楼.jpg" />
+          <h2>蝶楼</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage7医学部白宫.jpg" />
+          <h2>医学部白宫</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage8樱花大道.jpg" />
+          <h2>樱花大道</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage9樱顶老楼.jpg" />
+          <h2>樱顶老楼</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage1老图书馆仰视图.jpg" />
+          <h2>老图书馆仰视图</h2>
+        </div>
+        <div>
+          <img src="mainImage/sPage5珞珈文库.jpg" />
+          <h2>珞珈文库</h2>
+        </div>
+      </div>
+
+      <iframe class="iframe" id="1" src="" frameborder="0"></iframe>
+      <video src="传送门视频.mp4" id="portal" autoplay muted loop></video>
+    </div>
+  </body>
+
+  <script src="../he/Museum/jquery-3.6.1.js"></script>
+  <script src="Index.js"></script>
+</html>
