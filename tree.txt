@@ -1,0 +1,77 @@
+.
+|-- Index 首页
+|   |-- Index.js 
+|   |-- mainImage
+|   |   |-- Page1.1.jpg
+|   |   `--...
+|   |-- naviPage.css
+|   |-- 传送门.mp4
+|   `-- 轮播图.html
+|-- font 字体文件
+|   |-- font-style.ttf
+|   `-- font.css
+|-- he 老图书馆和万林博物馆
+|   |-- Library 老图书馆
+|   |   |-- Library.css
+|   |   |-- Library.html
+|   |   |-- Library.js
+|   |   `-- source
+|   |       |-- img
+|   |       |   |-- begin.png
+|   |       |   |--...
+|   |       `-- last-page-img
+|   |           |-- last1.png
+|   |           `--... 
+|   `-- Museum 万林艺术博物馆
+|       |-- Museum.css
+|       |-- Museum.html
+|       |-- Museum.js
+|       |-- jquery-3.6.1.js
+|       `-- source
+|           |-- font
+|           |-- img
+|           |   |-- front-page .jpg
+|           |   `-- ...
+|           `-- video
+|               `-- Museum.mp4
+|-- lu 牌坊，宋卿，行政楼
+|   |--介绍
+|   |   |-- example.css
+|   |   |-- example.html
+|   |   |-- example.js
+|   |   `-- sources
+|   |       `-- img
+|   |           |-- bj.jpg
+|   |           `-- ...
+|   `-- 预览
+|       |-- bg.jpg
+|       |-- page2.css
+|       |-- page2.html
+|       |-- page2.js
+|       `-- sources
+|           |-- img
+|           |   |-- bg2.jpg
+|           |   `-- ...
+|           `-- video
+|               `-- whu.mp4
+`-- zhao 樱花城堡
+    |-- imgs
+    |   |-- 1-1.jpg
+    |   `-- ...
+    |-- zhao-css
+    |   |-- zhao-first.css
+    |   |-- zhao-fourth.css
+    |   |-- zhao-second.css
+    |   `-- zhao-third.css
+    |-- zhao-html
+    |   |-- zhao-first.html
+    |   |-- zhao-fourth.html
+    |   |-- zhao-second.html
+    |   `-- zhao-third.html
+    `-- zhao-js
+        |-- jquery-3.6.1.js
+        |-- zhao-first.js
+        |-- zhao-fourth.js
+        |-- zhao-second.js
+        `-- zhao-third.js
+

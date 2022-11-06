@@ -175,7 +175,7 @@ let ifOut = 0;
 //关闭
 console.log($(`#pic${index}`));
 console.log(`${index}`);
-$(".main-pic").click(function () {
+$(".content").click(function () {
   $(`#pic${index}`).fadeIn("slow");
   ifOut = 1;
 });

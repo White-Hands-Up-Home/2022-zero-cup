@@ -125,6 +125,7 @@ video {
   text-align: center;
   width: 100%;
   top: 50%;
+  font-family: Arial, Helvetica, sans-serif !important;
   transform: translate(0, -50%);
 }
 /* 轮播图 */
