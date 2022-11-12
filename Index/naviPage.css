@@ -12,7 +12,7 @@ body {
   background-attachment: fixed;
   background-size: 100% 120%;
   font-size: 62.5%;
-  overflow-x: hidden;
+  overflow-x: scroll;
   position: relative;
 }
 
@@ -304,11 +304,10 @@ body {
   line-height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
 }
-.small-images div img:hover h2 {
+.small-images div:hover h2 {
   display: block;
   transition: 0.5s;
 }
-
 /* @media only screen and (max-width:1000px) {
     .slideshow{
         left: 20vw;

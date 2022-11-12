@@ -26,7 +26,7 @@ body {
   transform-origin: top left;
   transition: transform 0.5s linear;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0;
 }
 

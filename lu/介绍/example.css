@@ -19,6 +19,7 @@ body {
   background-attachment: fixed, fixed;
   background-size: cover;
   height: 160vh;
+  overflow-x: hidden;
 }
 
 .content {

@@ -39,7 +39,7 @@ function third() {
 }
 
 //传送门特效
-const time = 2000;
+const time = 1000;
 var portal = parent.document.getElementById("portal");
 
 function portalNone() {

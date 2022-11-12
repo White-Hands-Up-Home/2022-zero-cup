@@ -105,21 +105,6 @@ function scrollLoad() {
   });
 }
 
-// const bg = document.querySelector(".body");
-// document.addEventListener("scroll", function () {
-//     const scrollY = window.scrollY;
-//     if (scrollY != 0) {
-//         bg.style.backgroundPosition = "calc(50% + " + scrollY + "px) calc(50% + " + scrollY + "px)";
-//     } else {
-//         bg.style.backgroundPosition = "";
-//     }
-// })
-
-function jumpin() {
-  window.location.href =
-    "https://www.bilibili.com/video/BV1Fs411N7e1/?spm_id_from=333.337.search-card.all.click&vd_source=2dead8f1db04cc65edb35151e9da0b64";
-}
-
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 var w = window.innerWidth;
@@ -166,7 +151,7 @@ draw();
 setInterval(draw, 1); //每隔一毫秒重绘一次
 
 //传送门特效
-const time = 2000;
+const time = 1000;
 var portal = parent.document.getElementById("portal");
 
 function portalNone() {

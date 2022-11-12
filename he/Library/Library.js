@@ -62,7 +62,7 @@ $(".arrow").click(function () {
 });
 
 //传送门特效
-const time = 2000;
+const time = 1000;
 var portal = parent.document.getElementById("portal"); //获取父页面的传送门视频
 
 function portalNone() {

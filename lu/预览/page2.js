@@ -25,7 +25,7 @@ window.addEventListener("scroll", function () {
 });
 
 //传送门特效
-const time = 2000;
+const time = 1000;
 var portal = parent.document.getElementById("portal");
 console.log(portal);
 function portalNone() {
